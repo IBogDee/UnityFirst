@@ -5,7 +5,7 @@ public class PlayeCollision : MonoBehaviour
 {
 
     public NewMove movement;
-    public Game_manager gameManger;
+    
 
      void OnCollisionEnter(Collision collectionInfo)
     {
@@ -13,6 +13,7 @@ public class PlayeCollision : MonoBehaviour
         {
             Debug.Log("We Hit an Obstacle");
             movement.enabled = false;
+            FindObjectOfType<Game_manager>().EndGame();
         }
     }
 
