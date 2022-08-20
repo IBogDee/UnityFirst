@@ -16,16 +16,16 @@ public class NewMove : MonoBehaviour
     void FixedUpdate()
     {
         //Add a Forward Force (x , y , z )
-        rb.AddForce(0, 0, 500 * Time.deltaTime);
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
         if (Input.GetKey("d"))
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0 ,0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0 ,0, ForceMode.VelocityChange);
         }
 
            if (Input.GetKey("a"))
         {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0 ,0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0 ,0, ForceMode.VelocityChange);
         }
 
 
